@@ -35,9 +35,6 @@ bool makeMove(int row, int col) {
     }
 
     board[row][col] = currentPlayer;
-
-    currentPlayer = (currentPlayer == PLAYER_X) ? PLAYER_O : PLAYER_X;
-
     return true;
 }
 
@@ -89,6 +86,7 @@ int main() {
         if (checkWin(currentPlayer)) {
             winner = currentPlayer;
         }
+        currentPlayer = (currentPlayer == PLAYER_X) ? PLAYER_O : PLAYER_X;
     }
 
     printBoard();
